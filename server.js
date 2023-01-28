@@ -6,7 +6,12 @@ const cors = require('cors')
 
 app.use(express.json())
 
+// Logs to the console where the server is running
+app.listen(4000, () => console.log(`server running on 4000`))
+
 app.use(cors())
+//Goes to public path
+app.use(express.static(`${__dirname}/public`))
 
 // include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
